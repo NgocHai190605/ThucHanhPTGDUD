@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="Mmass" value="78" type="text" placeholder="Mark mass">
+    <input id="Mheight" value="1.69" type="text" placeholder="Mark height">
+    <input id="Jmass" value="92" type="text" placeholder="John mass">
+    <input id="Jheight" value="1.95" type="text" placeholder="John height">
+    <button id="btnCal">Caculate</button>
+</body>
+<script>
+    var Mmass = parseFloat(document.getElementById('Mmass').value);
+    var Mheight = parseFloat(document.getElementById('Mheight').value);
+    var Jmass = parseFloat(document.getElementById('Jmass').value);
+    var Jheight = parseFloat(document.getElementById('Jheight').value);
+    var btnCal = document.getElementById('btnCal');
+    btnCal.onclick=()=>{
+        var MBMI =  Mmass /  (Mheight*  Mheight);
+        var JBMI =   Jmass /  (Jheight*  Jheight);    
+        console.log(MBMI);
+        console.log(JBMI);
+        if(MBMI>JBMI){
+            console.log("MarkHighBMI");
+        }
+        else{
+             console.log("JohnHighBMI");
+        }
+    }
+</script>
+</html>
