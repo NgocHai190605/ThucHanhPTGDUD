@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>TinhBill</h2>
+    <input type="text" name="" id="bill" placeholder="Tổng hóa đơn" />
+    <button id="btnTt">Tính tiền</button>
+  </body>
+
+  <script>
+    var btnTt = document.getElementById("btnTt");
+    btnTt.onclick = () => {
+      var bill = Number(document.getElementById("bill").value);
+      var tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+      var toltal = bill + tip;
+      console.log(`The bill was ${bill}, the tip was ${tip.toFixed(
+        2
+      )}, and the total value ${toltal.toFixed(2)}
+`);
+    };
+  </script>
+</html>
