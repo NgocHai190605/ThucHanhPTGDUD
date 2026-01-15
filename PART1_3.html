@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>TEAM Koalas</h2>
+    <input type="text" id="KGame1" placeholder="Game 1" />
+    <hr />
+    <input type="text" id="KGame2" placeholder="Game 2" />
+    <hr />
+    <input type="text" id="KGame3" placeholder="Game 3" />
+    <h2>TEAM Dolphins</h2>
+    <input type="text" id="DGame1" placeholder="Game 1" />
+    <hr />
+    <input type="text" id="DGame2" placeholder="Game 2" />
+    <hr />
+    <input type="text" id="DGame3" placeholder="Game 3" />
+    <hr />
+    <button id="btnTotal">Total</button>
+  </body>
+  <script>
+    btnTotal.onclick = () => {
+      var btnTotal = document.getElementById("btnTotal");
+      var KGame1 = Number(document.getElementById("KGame1").value);
+      var KGame2 = Number(document.getElementById("KGame2").value);
+      var KGame3 = Number(document.getElementById("KGame3").value);
+      var DGame1 = Number(document.getElementById("DGame1").value);
+      var DGame2 = Number(document.getElementById("DGame2").value);
+      var DGame3 = Number(document.getElementById("DGame3").value);
+      var KScore = (KGame1 + KGame2 + KGame3) / 3;
+      var DScore = (DGame1 + DGame2 + DGame3) / 3;
+      console.log(KScore);
+      console.log(DScore);
+      if (KScore > DScore && KScore >= 100) {
+        console.log("Koalas win");
+      } else if (DScore > KScore && DScore >= 100) {
+        console.log("Dophins win");
+      } else if ((DScore = KScore && KScore >= 100 && DScore >= 100)) {
+        console.log("Draw");
+      } else {
+        console.log("No trophy");
+      }
+    };
+  </script>
+</html>
