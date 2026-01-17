@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>TEAM Koalas</h2>
+    <input type="text" id="KGame1" placeholder="Game 1" />
+    <hr />
+    <input type="text" id="KGame2" placeholder="Game 2" />
+    <hr />
+    <input type="text" id="KGame3" placeholder="Game 3" />
+    <h2>TEAM Dolphins</h2>
+    <input type="text" id="DGame1" placeholder="Game 1" />
+    <hr />
+    <input type="text" id="DGame2" placeholder="Game 2" />
+    <hr />
+    <input type="text" id="DGame3" placeholder="Game 3" />
+    <hr />
+    <button id="btnTotal">Total</button>
+  </body>
+  <script>
+    btnTotal.onclick = () => {
+      var btnTotal = document.getElementById("btnTotal");
+      var KGame1 = Number(document.getElementById("KGame1").value);
+      var KGame2 = Number(document.getElementById("KGame2").value);
+      var KGame3 = Number(document.getElementById("KGame3").value);
+      var DGame1 = Number(document.getElementById("DGame1").value);
+      var DGame2 = Number(document.getElementById("DGame2").value);
+      var DGame3 = Number(document.getElementById("DGame3").value);
+      var calAverage = (a, b, c) => (a + b + c) / 3;
+      var avgKoalas = calAverage(KGame1, KGame2, KGame3);
+      var avgDophins = calAverage(DGame1, DGame2, DGame3);
+      if (avgKoalas >= 2 * avgDophins) {
+        console.log(`Koalas win(${avgKoalas} vs. ${avgDophins})`);
+      } else if (avgDophins >= 2 * avgKoalas) {
+        console.log(`Dophins win(${avgDophins} vs. ${avgKoalas})`);
+      } else {
+        console.log("No team wins");
+      }
+    };
+  </script>
+</html>
