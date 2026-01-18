@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btnAgain">Again!</button> <br />
+    <input type="text" id="Score" placeholder="Score" />
+    <input type="text" id="secretNumber" disabled placeholder="secretNumber" />
+    <input type="text" id="Message" placeholder="Message" />
+    <input type="text" id="Number" placeholder="Number" />
+    <input type="text" id="Guess" placeholder="Guess input" />
+  </body>
+  <script>
+    const btnAgain = document.getElementById("btnAgain");
+    btnAgain.onclick = () => {
+      let secretNumber = Math.trunc(Math.random() * 50) + 1;
+      document.getElementById("Message").value = "Start guessing";
+      document.getElementById("Score").value = "?";
+      document.getElementById("Number").value = "?";
+      document.getElementById("Guess").value = "?";
+      document.getElementById("secretNumber").value = secretNumber;
+      document.body.style.backgroundColor = "#222";
+      document.getElementById("Number").style.width = "15rem";
+    };
+  </script>
+</html>
