@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <textarea name="" id="texta"></textarea>
+    <button id="btnCon">Convert</button>
+  </body>
+  <script>
+    const btnCon = document.getElementById("btnCon");
+    btnCon.onclick = () => {
+      const text = document.getElementById("texta").value;
+      const rows = text.split("\n");
+      for (let i = 0; i < rows.length; i++) {
+        const row = rows[i];
+        const lowerRow = row.trim().toLowerCase();
+        const [first, second] = lowerRow.split("_");
+        const camelCase =
+          first + second.replace(second[0], second[0].toUpperCase());
+        console.log(`${camelCase} ${"✅".repeat(i + 1)}`);
+      }
+    };
+  </script>
+</html>
